@@ -33,7 +33,7 @@
 
 <body>
     <!--定义函数的3种方法-->
-    <script  type="text/html">
+    <script type="text/html">
         //函数关键字+函数名+括号
         function log() {
             console.log(10);
@@ -57,10 +57,10 @@ sum();
         //var add2=new function('console.log(1 + 3););
         //add2();
         </script>
-   
-   <script type="text/html">
 
-       //arguments对象，是一个伪数组
+    <script type="text/html">
+
+        //arguments对象，是一个伪数组
       function sum() {
        console.log(arguments);
       }
@@ -69,23 +69,70 @@ sum();
     
    </script>
 
-   <!--匿名函数-->
-   <script>
-      document.onclick=function (){
-           alert("点我干嘛");
-   
-   //时针
-   setInterval(
-                function(){
+    <!--匿名函数-->
+    <script>
+        document.onclick = function () {
+            alert("点我干嘛");
 
-                      console.log(1111);
-                },1000)
+            //时针
+            setInterval(
+                function () {
 
-      }
+                    console.log(1111);
+                }, 1000)
 
-      (function(){alert("真的会执行么？")})();
-   </script>
-   
+        }
+
+        //(function(){alert("真的会执行么？")}),();
+    </script>
+
+
+    <script>
+        // (function(){ alert("我出来了！");})();
+    </script>
+
+    <script type="text/html">
+        //总控方法
+        function fn(num1, num2, func) {
+
+            return func(num1, num2);
+        }
+
+
+        //加减乘除
+
+
+        function add(a, b) {
+            return a + b;
+
+        }
+
+        function sub(a, b) {
+            return a - b;
+
+        }
+
+        function mul(a, b) {
+            return a * b;
+
+        }
+
+        function divide(a, b) {
+            return a / b;
+
+        }
+
+        console.log(fn(10, 20, add));
+    </script>
+
+    <script>
+    function f1(n){
+       if(n===1||n===2) return 1;
+  return f1(n-1)+f1(n-2);
+    }
+   console.log(f1(7));
+
+    </script>
 </body>
 
 </html>
