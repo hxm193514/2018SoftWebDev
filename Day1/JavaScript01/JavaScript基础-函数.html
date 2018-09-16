@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ......................我佛慈悲......................
+    *                       _oo0oo_
+    *                      o8888888o
+    *                      88" . "88
+    *                      (| -_- |)
+    *                      0\  =  /0
+    *                    ___/`---'\___
+    *                  .' \\|     |// '.
+    *                 / \\|||  :  |||// \
+    *                / _||||| -卍-|||||- \
+    *               |   | \\\  -  /// |   |
+    *               | \_|  ''\---/''  |_/ |
+    *               \  .-\__  '-'  ___/-. /
+    *             ___'. .'  /--.--\  `. .'___
+    *          ."" '<  `.___\_<|>_/___.' >' "".
+    *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+    *         \  \ `_.   \_ __\ /__ _/   .-` /  /
+    *     =====`-.____`.___ \_____/___.-`___.-'=====
+    *                       `=---='
+    *                       
+    *..................佛祖开光 ,永无BUG...................
+    -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--定义函数的3种方法-->
+    <script  type="text/html">
+        //函数关键字+函数名+括号
+        function log() {
+            console.log(10);
+        }
+  
+   //调用函数
+    log();
+   
+   
+        function sum() {
+            console.log(1 + 3);
+        }
+
+        var add = function () {
+
+            console.log(1 + 3);
+        }
+   
+sum();
+  
+        //var add2=new function('console.log(1 + 3););
+        //add2();
+        </script>
+   
+   <script type="text/html">
+
+       //arguments对象，是一个伪数组
+      function sum() {
+       console.log(arguments);
+      }
+      sum(1,2,3,4,5);
+
+    
+   </script>
+
+   <!--匿名函数-->
+   <script>
+      document.onclick=function (){
+           alert("点我干嘛");
+   
+   //时针
+   setInterval(
+                function(){
+
+                      console.log(1111);
+                },1000)
+
+      }
+
+      (function(){alert("真的会执行么？")})();
+   </script>
+   
+</body>
+
+</html>
