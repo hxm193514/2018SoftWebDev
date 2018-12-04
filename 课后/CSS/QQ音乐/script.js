@@ -6,8 +6,10 @@ window.onload = function () {
     var arrow = document.getElementsByClassName('arrow')[0]; //按钮消失显示
     var slideshow_li = document.querySelectorAll(".slideshow li").length / 5; //算出有几页图片
     var top_nav = document.getElementById("top-nav").getElementsByTagName("li");
+    var top_subnav = document.getElementById("top_subnav").getElementsByTagName("li");
     var top_nava = document.querySelectorAll(".top-nav li a");
-    var top_subnav = document.querySelectorAll(".top_subnav li");
+    var top_subnava = document.querySelectorAll(".top_subnav li a");
+   
     var img = document.querySelectorAll(".slideshow img");
     var span = document.querySelectorAll(".lunbo > span");
     //头部按钮
@@ -15,15 +17,26 @@ window.onload = function () {
     for (var i = 0; i < top_nav.length; i++) {
         (function (n) {
             top_nav[i].onclick = function () {
-                for (var j = 0; j < top_nav.length; j++) {
-
-                    top_nava[j].className = "";
+                for (var j = 0; j < top_nav.length; j++) { 
                     top_nav[j].className = 'top-nav-z';
                     console.log(top_nav[j]);
                 }
                 this.className += " current";
                 top_nava[n].className = " acurrent"
                 console.log(top_nav[n]);
+            }
+        })(i);
+    }
+  //头部下边导航栏
+    for (var i = 0; i < top_subnav.length; i++) {
+        (function (n) {
+            top_subnav[i].onclick = function () {
+                for (var j = 0; j < top_subnav.length; j++) {
+
+                    top_subnava[j].className = "";
+                  
+                }
+                top_subnava[n].className = "currenta";
             }
         })(i);
     }
@@ -71,7 +84,7 @@ window.onload = function () {
                 
                 img[n].className += " simg";
                 span[n].className += "play play1";
-                console.log(span[n]);
+               
             }
                 img[n].onmouseout = function () {
                     for (var j = 0; j < img.length; j++) {
@@ -80,9 +93,10 @@ window.onload = function () {
                     }
                     img[n].className += " simg1";
                     span[n].className += "play play2";
-                    console.log(span[n]+"2");
+                   
                 }
             
         })(i);
     }
+
 }
