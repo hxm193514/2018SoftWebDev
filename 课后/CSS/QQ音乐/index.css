@@ -349,3 +349,38 @@ body {
 .play2{
     animation: bftplk 1s ease forwards;
 }
+
+
+/* 分页 */
+.show_box {
+    width: 100%;
+    background-color: #F3F3F3;
+}
+/* 头部开始 */
+.header .show_box_er {
+    width: 1200px;
+    margin: 0px auto;
+    position: relative;
+    padding-top: 90px;
+}
+
+.show{
+    position: absolute;
+    width: 1000px;
+    height: 224px;
+   padding-left: 300px;
+}
+
+.show li 
+{
+    margin-top: 20px;
+    float: left;
+    margin-right: 60px;
+}
+.show img{
+    border-radius: 50%;
+       width: 140px;
+}
+h4{
+    text-align: center;
+}
