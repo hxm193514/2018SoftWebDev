@@ -19,6 +19,7 @@ window.onload = function () {
             top_nav[i].onclick = function () {
                 for (var j = 0; j < top_nav.length; j++) { 
                     top_nav[j].className = 'top-nav-z';
+                    top_nava[j].className = ""
                     console.log(top_nav[j]);
                 }
                 this.className += " current";
@@ -40,6 +41,9 @@ window.onload = function () {
             }
         })(i);
     }
+   
+   
+   
 
     //轮播图
     var target = 0;
