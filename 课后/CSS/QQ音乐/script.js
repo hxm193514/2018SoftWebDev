@@ -1,5 +1,5 @@
 window.onload = function () {
-    var mod_index = document.getElementsByClassName('mod_index')[0]; //最大div
+ 
     var btnl = document.getElementsByClassName('btn-l')[0]; //轮播图左边按钮
     var btnr = document.getElementsByClassName('btn-r')[0]; //轮播图右边按钮
     var slideshow = document.getElementsByClassName('slideshow')[0]; //轮播图ul
@@ -10,7 +10,7 @@ window.onload = function () {
     var top_nava = document.querySelectorAll(".top-nav li a");
     var top_subnava = document.querySelectorAll(".top_subnav li a");
    
-    var img = document.querySelectorAll(".slideshow img");
+    var img = document.querySelectorAll(".lunbo");
     var span = document.querySelectorAll(".lunbo > span");
     //头部按钮
 
@@ -48,12 +48,12 @@ window.onload = function () {
     //轮播图
     var target = 0;
     var leader = 0;
-    mod_index.onmouseover = function () {
+    $(".mod_index")[0].onmouseover = function () {
         btnl.className = "slideshow_btn btn-l btn1"
         btnr.className = "slideshow_btn btn-r btn2"
      
     }
-    mod_index.onmouseout = function () {
+    $(".mod_index")[0].onmouseout = function () {
        
         btnl.className = "slideshow_btn btn-l btn3"
         btnr.className = "slideshow_btn btn-r btn4"
