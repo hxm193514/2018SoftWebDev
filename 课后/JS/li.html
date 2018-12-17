@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .Buy_my {
+            width: 200px;
+            height: auto;
+        }
+
+        .Buy_my li {
+            margin: 0 auto;
+            height: 100px;
+            /* line-height: 100px; */
+            text-align: center;
+            font-size: 15px;
+            width: 300px;
+            border: 15px solid #ccc;
+            border-image: url(http://img.mukewang.com/52e22a1c0001406e03040221.jpg) 15 repeat;
+            opacity: 0.5;
+        }
+
+        .Buy_myli {}
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+</head>
+
+<body>
+
+    <ul class="Buy_my">
+
+        <li class="ccz">
+            <p>@item.AddressPerson <span>@item.MobiNumber</span></p>
+            <p><span>默认</span>@item.Area</p>
+        </li>
+
+        <li class="ccz">
+            <!-- <p>@item.AddressPerson <span>@item.MobiNumber</span></p>
+            <p><span>默认</span>@item.Area</p> -->
+        </li>
+
+        <li class="ccz">
+            <!-- <p>@item.AddressPerson <span>@item.MobiNumber</span></p>
+            <p><span>默认</span>@item.Area</p> -->
+        </li>
+        <li class="ccz">
+            <!-- <p>@item.AddressPerson <span>@item.MobiNumber</span></p>
+            <p><span>默认</span>@item.Area</p> -->
+        </li>
+
+    </ul>
+
+    <form action="/home/uploadimg" method="post" enctype="multipart/form-data">
+        <input  type="file" name="file1" />
+        <input  type="submit" value="submit" />
+    </form>
+
+
+    <script>
+        window.onload = function () {
+            var buy = $(".Buy_my")[0].childNodes;
+
+            for (var i = 0; i < buy.length; i++) {
+                (function (j) {
+
+                    buy[j].onclick = function () {
+                        for (var m = 0; m < buy.length; m++) {
+                            if(m%2===1)
+                            {
+                                buy[m].setAttribute('style','opacity: 0.5;');
+                            }
+                          
+                        }
+                       
+                        buy[j].setAttribute('style','opacity: 1;');
+                    }
+                }(i))
+            }
+        }
+    </script>
+</body>
+
+</html>
