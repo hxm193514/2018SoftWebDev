@@ -28,11 +28,9 @@ var trmer = null;
                 for (var j = 0; j < top_nav.length; j++) {
                     top_nav[j].className = 'top-nav-z';
                     top_nava[j].className = ""
-                   
                 }
                 this.className += " current";
                 top_nava[n].className = " acurrent"
-               
             }
         })(i);
     }
@@ -96,15 +94,12 @@ var trmer = null;
         $(".btn-l")[0].className = "slideshow_btn btn-l btn3";
         $(".btn-r")[0].className = "slideshow_btn btn-r btn4";
     }
-  
-      
-    
-      
         $(".btn-l")[0].onclick = function () {
             clearInterval(timer);
             index--;
          action($(".slideshow")[0], -index * 1200);
         }
+
         $(".btn-r")[0].onclick = function () {
             clearInterval(timer);
             index++;
@@ -125,12 +120,21 @@ var trmer = null;
         clearInterval(obj.timer);  // 先清除定时器
             var speed = obj.offsetLeft < target ? 15 : -15;  // 用来判断 应该 +  还是 -
             obj.timer = setInterval(function () {
+                if (target >= 0) {
+                    target = 0;
+                    index =$("."+ulLis).length/5;
+                }else if(index===0)
+                {
+                    target = 0;
+                }
                 var result = target - obj.offsetLeft; // 因为他们的差值不会超过15
                 obj.style.left = obj.offsetLeft + speed + "px";
                 if (Math.abs(result) <= 15)  // 如果差值不小于 15 说明到位置了
                 {
+                   
                     clearInterval(obj.timer);
                     obj.style.left = target + "px";  // 有5像素差距   我们直接跳转目标位置
+                   
                 }
             }, 10)
     
