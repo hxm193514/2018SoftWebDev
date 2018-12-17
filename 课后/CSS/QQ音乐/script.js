@@ -1,16 +1,6 @@
-// function animate(obj, target) {
-//     clearInterval(obj.timer);  // 先清除定时器
-//     var speed = obj.offsetLeft < target ? 15 : -15;  // 用来判断 应该 +  还是 -
-//     obj.timer = setInterval(function () {
-//         var result = target - obj.offsetLeft; // 因为他们的差值不会超过15
-//         obj.style.left = obj.offsetLeft + speed + "px";
-//         if (Math.abs(result) <= 15)  // 如果差值不小于 15 说明到位置了
-//         {
-//             clearInterval(obj.timer);
-//             obj.style.left = target + "px";  // 有5像素差距   我们直接跳转目标位置
-//         }
-//     }, 10)
-// }
+
+
+//document.getElementById("myList").insertBefore(newItem,existingItem); 这个是个好东西
 window.onload = function () {
     var ulLis ="wntj";
     var slideshow_li = ulLis.length / 5; //算出有几页图片
@@ -23,10 +13,12 @@ window.onload = function () {
 var trmer = null;
 
   var index = 0;
-
+//    $('.slideshow')[0] =  $('.slideshow')[0]
     //头部按钮
+    var newItem=document.createElement("li")
     for(var i=0;i<5;i++)
     {
+        $(".slideshow")[0].insertBefore(newItem,$(".slideshow")[0].children[i]); //无缝连接
         $(".slideshow")[0].appendChild($(".slideshow")[0].children[i].cloneNode(true));
     }
    
@@ -56,6 +48,7 @@ var trmer = null;
             }
         })(i);
     }
+    //要显示的轮播图
     function mm(a,b,c,d,e,f){
         // $("."+a)[0].onclick = function () {
             $("."+a).css("display", "block");
@@ -110,27 +103,19 @@ var trmer = null;
         $(".btn-l")[0].onclick = function () {
             clearInterval(timer);
             index--;
-            console.log(index);
-             if (index > $("."+ulLis).length/5-1)  // 后判断
-         {
-            $(".slideshow")[0].style.left = 0;  // 迅速调回
-            index = 1;  // 因为第6张就是第一张  第6张播放 下次播放第2张
-              
-         }
-        
          action($(".slideshow")[0], -index * 1200);
         }
         $(".btn-r")[0].onclick = function () {
             clearInterval(timer);
             index++;
-            console.log(index);
-            if (index > $("."+ulLis).length/5-1)  // 后判断
-            {
-                $(".slideshow")[0].style.left = 0;  // 迅速调回
-                index = 1;  // 因为第6张就是第一张  第6张播放 下次播放第2张
-            }
-           
-                action($(".slideshow")[0], -index * 1200);
+                if (index > $("."+ulLis).length/5-1)  // 后判断
+                {
+                    $(".slideshow")[0].style.left = 0;  // 迅速调回
+                    index = 1;  // 因为第6张就是第一张  第6张播放 下次播放第2张
+                }
+                    action($(".slideshow")[0], -index * 1200);
+    
+          
             
         }
  
@@ -138,13 +123,6 @@ var trmer = null;
     //轮播图转动
      function  action(obj, target,) {
         clearInterval(obj.timer);  // 先清除定时器
-       
-        // if (cerindex > $("."+ulLis).length/5-1)  // 后判断
-        // {
-        //     $(".slideshow")[0].style.left = 0;  // 迅速调回
-        //     cerindex = 0;  // 因为第6张就是第一张  第6张播放 下次播放第2张
-        // }
-        // else{
             var speed = obj.offsetLeft < target ? 15 : -15;  // 用来判断 应该 +  还是 -
             obj.timer = setInterval(function () {
                 var result = target - obj.offsetLeft; // 因为他们的差值不会超过15
@@ -155,7 +133,6 @@ var trmer = null;
                     obj.style.left = target + "px";  // 有5像素差距   我们直接跳转目标位置
                 }
             }, 10)
-        // }
     
      }
 
