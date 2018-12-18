@@ -4,12 +4,12 @@
 window.onload = function () {
     var ulLis ="wntj";
     var slideshow_li = ulLis.length / 5; //算出有几页图片
-    var top_nav = document.getElementById("top-nav").getElementsByTagName("li");
-    var top_subnav = document.getElementById("top_subnav").getElementsByTagName("li");
-    var top_nava = document.querySelectorAll(".top-nav li a");
-    var top_subnava = document.querySelectorAll(".top_subnav li a");
-    var img = document.querySelectorAll(".lunbo");
-    var span = document.querySelectorAll(".lunbo > span");
+    var top_nav = document.getElementById("top-nav").getElementsByTagName("li");//顶部导航栏
+    var top_subnav = document.getElementById("top_subnav").getElementsByTagName("li");//下面一点的导航栏
+    var top_nava = document.querySelectorAll(".top-nav li a");//导航栏的文字
+    var top_subnava = document.querySelectorAll(".top_subnav li a");//导航栏的文字
+    var img = document.querySelectorAll(".lunbo");//轮播图的A标签
+    var span = document.querySelectorAll(".lunbo > span"); //图片里面的播放按钮动画
 var trmer = null;
 
   var index = 0;
@@ -108,10 +108,7 @@ var trmer = null;
                     $(".slideshow")[0].style.left = 0;  // 迅速调回
                     index = 1;  // 因为第6张就是第一张  第6张播放 下次播放第2张
                 }
-                    action($(".slideshow")[0], -index * 1200);
-    
-          
-            
+                    action($(".slideshow")[0], -index * 1200); 
         }
  
      

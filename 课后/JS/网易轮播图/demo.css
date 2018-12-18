@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 轮播图最外围 */
+.slide
+{
+    position: relative;
+    height: 333px;
+    width: 500px;
+    background-color: forestgreen;
+    margin: 50px auto;
+}
+/* 轮播图里边第一层 */
+.slide-min
+{
+    position: relative;
+    height: 333px;
+    width: 1000px;
+    background-color: aquamarine;
+}
+/* 轮播图的图片 */
+.slide-min-img
+{
+    position: absolute;
+    height: 333px;
+    width: 500px;
+}
+/* 轮播图左右箭头与下标 */
+.slide-arrows,.slide-sub
+{
+    cursor: pointer;
+}
+/* 轮播图左右按钮样式 */
+.slide-arrows-l,.slide-arrows-r
+{
+    position: absolute;
+    top: 50%;
+    width: 79px;
+    height: 108px;
+    background-color: rgba(250,0,255, 0.3);
+    line-height: 108px;
+    text-align: center;
+    font-size: 50px;
+    color:#363131;
+}
+.slide-arrows-r
+{
+    right: 0;
+}
+/* 轮播图下标样式 */
+.slide-sub
+{
+   text-align: center;
+}
+.slide-sub-s
+{
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+    background-color: aliceblue;
+    border: 1px salmon solid;
+    margin-right: 10px;
+}
