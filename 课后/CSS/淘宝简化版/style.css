@@ -162,7 +162,14 @@ html,body{
 float: left;
 
 }
-
+.www{
+    width: 1200px;
+    height: auto;
+}
+.cup_w{
+    width: 1200px;
+    height: auto;
+}
 .contet_left ul{
     margin-left: 180px;
     width: 190px;
