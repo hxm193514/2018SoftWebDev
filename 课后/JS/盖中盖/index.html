@@ -1,17 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>新盖中盖</title>
-</head>
+<meta charset="utf-8">
+<title>js实现的点击div区域外隐藏div区域</title> 
+<style type="text/css"> 
+#myDiv{ 
+    border:1px solid #000000; 
+    width:200px; 
+    height:100px; 
+    background:#FF0000;
+} 
+</style> 
+<script type="text/javascript">
+window.onload=function(){
+    var myDiv = document.getElementById("myDiv");
+    document.addEventListener("click",function(){
+        myDiv.style.display="none";
+    });
+    myDiv.addEventListener("click",function(event){
+        event=event||window.event;
+        event.stopPropagation();
+    }); 
+};
 
-<body>
-    
-    <script src="jquery.min.js"></script>
-    <script  src="index.js"></script>
-</body>
-
+ //添加key-value 数据到 sessionStorage
+ sessionStorage.setItem("demokey", "http://blog.itjeek.com");
+        //通过key来获取value
+        var dt = sessionStorage.getItem("demokey");
+        alert(dt);
+        //清空所有的key-value数据。
+        //sessionStorage.clear();
+        alert(sessionStorage.length);
+</script>
+</head> 
+<body> 
+<div id="myDiv"></div>
+</body> 
 </html>

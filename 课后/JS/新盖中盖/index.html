@@ -26,10 +26,8 @@
                    <li class="haha">
                <!-- 加载编辑器的容器 -->
             <script id="container" name="content" type="text/plain">
-                <span class="conbtn">
-
-                    </span>
-            </script>
+              
+            </script>`
             <!-- 配置文件 -->
             <script type="text/javascript" src="Ueditor/ueditor.config.js"></script>
             <!-- 编辑器源码文件 -->
@@ -37,6 +35,19 @@
             <!-- 实例化编辑器 -->
             <script type="text/javascript">
                 var ue = UE.getEditor('container');
+                ue.addListener("blur",function on(){
+                var clonedNode = $(".edui-default")[0].cloneNode(true); // 克隆节点
+                for(var j = 0;j<$(".add a").length;j++)
+                {
+                    $("#container").remove();
+                }
+
+    clonedNode.setAttribute("onblur","on()");
+    clonedNode.setAttribute("id","container");
+
+    $(".haha")[0].appendChild(clonedNode);
+ }
+);
             </script>
                    </li>
                    
@@ -51,7 +62,7 @@
      (function(n){
         $(".add a")[n].onclick=function(){
             var clonedNode = $(".edui-default")[0].cloneNode(true); // 克隆节点
-    
+       
             for(var j = 0;j<$(".add").length;j++)
             {
                 $("#container").remove();
@@ -68,18 +79,6 @@
           }
      }(i));
   
- }
-function on(){
-    var clonedNode = $(".edui-default")[0].cloneNode(true); // 克隆节点
-    for(var j = 0;j<$(".add a").length;j++)
-    {
-        $("#container").remove();
-    }
-
-    clonedNode.setAttribute("onblur","on()");
-    clonedNode.setAttribute("id","container");
-
-    $(".haha")[0].appendChild(clonedNode);
  }
 
 </script>
