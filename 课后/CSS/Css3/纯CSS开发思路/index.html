@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>纯CSS开发思路</title>
+    <style>
+       *{
+           padding:0;
+           margin: 0;
+           /* outline:none; */
+       }
+       html,body{
+           height: 100%;
+       }
+       body
+       {
+        /* body默认高度为0 */
+        /* 径向渐变 */
+
+           background: #000;
+           /* background: radial-gradient(ellipse at content,#34679a 0%,#214163 50%,#0d1926 100%) */
+       }
+       body>div{
+           width: 200px;
+           height: 200px;
+           border: 1px solid #fff;
+           border-radius: 50%;
+           position: absolute;
+           top: 15%;
+           left: 50%;
+           margin-left: -100px;
+           transform: rotateX(80deg) rotateY(20deg);
+           transform-style: preserve-3d;    
+       }
+       body>div:nth-of-type(2){
+           transform: rotateX(-80deg) rotateY(20deg);
+       }
+       body>div:nth-of-type(3){
+           transform: rotateX(-70deg) rotateY(60deg);
+       }
+       body>div:nth-of-type(4){
+           transform: rotateX(70deg) rotateY(60deg);
+       }
+       /* 伪元素等同于行内元素 */
+       body>div:first-of-type::after{
+           width: 40px;
+           height: 40px;
+           content: "";
+           background-color: #fff;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           margin-left: -20px;
+           transform: rotateX(80deg);
+        border-radius: 50%;
+        animation: nuclues 5s linear infinite;
+       }
+       @keyframes nuclues{
+           0%{
+             box-shadow: 0 0 0 transparent;
+           }
+           50%{
+             box-shadow: 0 0 30px #fff;
+           }
+           100%{
+            box-shadow: 0 0 0 transparent;
+           }
+       }
+       body>div>div{
+           width: 200px;
+           height: 200px;
+           transform-style: preserve-3d;     
+           animation: trail 1s infinite linear;
+         /* border-radius: 50%; */
+       }
+       @keyframes trail{
+           from{
+               transform: rotateZ(0deg);
+           }
+           to{
+               transform: rotateZ(360deg);
+           }
+       }
+     body>div>div::after{
+         content: "";
+         width: 5px;
+         height: 5px; 
+         background: #fff;
+         position: absolute;
+         border-radius: 50%; 
+         top: -5px;
+         left: 50%;
+         margin-left: -5px;
+         box-shadow: 0 0 12px #fff;
+         animation: particle 2s ease-in infinite;
+     }
+     @keyframes particle{
+        from{
+               transform: rotateX(90deg) rotateY(0deg);
+           }
+           to{
+            transform: rotateX(90deg) rotateY(-360deg);
+           }
+     }
+     body>div:nth-of-type(2)>div,body>div:nth-of-type(2)>div::after{
+         animation-delay: -0.5s;
+     }
+     body>div:nth-of-type(3)>div,body>div:nth-of-type(3)>div::after{
+         animation-delay: -1s;
+     }
+     body>div:nth-of-type(3)>div,body>div:nth-of-type(3)>div::after{
+         animation-delay: -1.5s;
+     }
+    </style>
+</head>
+<body>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+    </div>
+</body>
+</html>
